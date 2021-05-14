@@ -1,19 +1,33 @@
 // App.js
-import React, {Component} from 'react';
-import Counter from './Components/Counter'
-import Option from './Components/Option'
-import Button from './Components/Button'
 
-class App extends Component{
-  render(){
-    return(
-      <div>
-        <Counter store = {this.props.store}/>
-        <Option store = {this.props.store}/>
-        <Button store = {this.props.store}/>
-      </div>
-    );
+import React from 'react';
+import {createGlobalStyle} from 'styled-components';
+import TodoTemplate from './Toto/TodoTemplate';
+import TodoHead from './Toto/TodoHead';
+import TodoList from './Toto/TodoList';
+import TodoItem from './Toto/TodoItem';
+
+const GlobalStyle = createGlobalStyle`
+  body{
+    background:#e9ecef;
   }
-}
+`;
+
+function App() {
+  return (
+    <>
+    <GlobalStyle/>
+    <TodoTemplate>
+      <TodoHead/>
+      <TodoList/>
+    </TodoTemplate>
+    </>
+  );
+} 
 
 export default App;
+
+//https://react.vlpt.us/mashup-todolist/01-create-components.html
+
+
+
