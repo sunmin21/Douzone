@@ -1,0 +1,16 @@
+
+.category {
+    display: block;
+    border: 1px solid #dae1e6;
+    font-size: 16px;
+    width:94px;
+    line-height: 49px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    background-color:lightyellow;
+}
+li { 
+    display: flex;
+    float: left; 
+}
