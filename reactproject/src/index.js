@@ -2,7 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App'
 
-ReactDOM.render(
-			<App />,
-			document.getElementById('root')
-		);
+import {createStore} from 'redux';
+import counterApp from './reducers';
+
+const store = createStore(counterApp);
+
+const render=()=>{
+	ReactDOM.render(
+		<App store={store}/>,
+		document.getElementById('root')
+	);
+}
+
+store.subscribe(render);
+render();

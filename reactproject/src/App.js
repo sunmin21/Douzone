@@ -1,31 +1,19 @@
 // App.js
+import React, {Component} from 'react';
+import Counter from './Components/Counter'
+import Option from './Components/Option'
+import Button from './Components/Button'
 
-import React from 'react';
-import {createGlobalStyle} from 'styled-components';
-import TodoTemplate from './TodoTemplate';
-import TodoHead from './TodoHead';
-
-const GlobalStyle = createGlobalStyle`
-  body{
-    background:#e9ecef;
+class App extends Component{
+  render(){
+    return(
+      <div>
+        <Counter store = {this.props.store}/>
+        <Option store = {this.props.store}/>
+        <Button store = {this.props.store}/>
+      </div>
+    );
   }
-`;
-
-function App() {
-  return (
-    <>
-    <GlobalStyle/>
-    <TodoTemplate>
-        <TodoHead/>
-
-    </TodoTemplate>
-    </>
-  );
 }
 
 export default App;
-
-
-
-
-
